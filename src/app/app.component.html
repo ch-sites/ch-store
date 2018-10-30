@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar ie-nav" [containerInside]="false">
+    <logo>
+        <a class="logo navbar-brand" routerLink="/" routerLinkActive="true"><strong>{{title}}</strong></a>
+    </logo>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active waves-light" mdbWavesEffect>
+                <a class="nav-link" routerLink="/home" routerLinkActive="true">Home</a>
+            </li>
+
+            <li class="nav-item active waves-light" mdbWavesEffect>
+                <a class="nav-link" routerLink="/admin" routerLinkActive="true">Admin</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <a class="nav-link" *ngIf="!(authentication$ | async).user.uid" routerLink="/login" routerLinkActive="true">Login</a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <a class="nav-link" *ngIf="(authentication$ | async).user.uid" (click)=logout()>Logout</a>
+            </li>
+            <li class="nav-item waves-light" mdbWavesEffect>
+                <img ngxGravatar [email]="currentUser.email" *ngIf="currentUser != null" src="{{currentUser.photoURL}}">
+            </li>
+        </ul>
+    </links>
+</mdb-navbar>
+
+<main>
+    <div class="container" style="min-height:1000px; margin-top:80px;">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<footer class="page-footer pink pt-4 mt-4">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                <span>ChStore.com by v. 0.1.0</span>
+            </p>
+        </div>
+    </div>
+</footer>
