@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import { User }         from '@Core/models/user.model';
 import * as authenticationActions from '@Core/store/authentication/authentication.actions';
 import { AuthenticationState } from '@Core/store/authentication/authentication.state';
 

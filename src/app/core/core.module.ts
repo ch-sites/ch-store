@@ -21,13 +21,13 @@ import { RoleService } from './services';
 import { HttpClientModule } from '@angular/common/http';
 
 export interface State {
-  authentication: AuthenticationState;
-  user: UserState;
+    authentication: AuthenticationState;
+    user: UserState;
 }
 
 export const reducers: ActionReducerMap<State> = {
-  authentication: authenticationReducer,
-  user: UserReducer
+    authentication: authenticationReducer,
+    user: UserReducer
 };
 
 @NgModule({
