@@ -28,9 +28,11 @@ export class UserDataService {
                     let roles = [];
 
                     try {
-                        data.roles.forEach(item => {
+                        if (data.roles) {
+                            data.roles.forEach(item => {
                             roles.push(item);
                         });
+                        }
                     } catch(error) {
                         console.log(error);
                     }

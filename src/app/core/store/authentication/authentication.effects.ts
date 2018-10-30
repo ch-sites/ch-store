@@ -27,7 +27,12 @@ export class AuthenticationEffects {
                 const actions = [];
 
                 if (authData) {
-                    const user = { uid: authData.uid, displayName: authData.displayName, email: authData.email };
+                    const user = {
+                        uid: authData.uid,
+                        displayName: authData.displayName,
+                        email: authData.email,
+                        photoURL: authData.photoURL
+                    };
 
                     actions.push(new authenticationActions.Authenticated(user));
                     actions.push(new userActions.LoadUser({ user: user }));

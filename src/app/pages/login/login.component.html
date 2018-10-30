@@ -1,4 +1,4 @@
-<div *ngIf="!currentUser; else alreadyLoggedIn">
+<div *ngIf="!(authentication$ | async).user.uid; else alreadyLoggedIn">
     <h3>Social Login</h3>
 
     <button (click)="signInWithGoogle()" type="button" class="btn btn-gplus red waves-light" mdbWavesEffect>
