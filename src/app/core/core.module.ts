@@ -46,7 +46,8 @@ export const reducers: ActionReducerMap<State> = {
         StoreDevtoolsModule.instrument({
             maxAge: 25,
             logOnly: environment.production
-        })
+        }),
+        MDBBootstrapModule
     ],
     providers: [RoleService]
 })

@@ -10,6 +10,7 @@ import { UserAdminRoutingModule } from './user-admin-routing.module';
 import { AdminUserComponent } from './component/admin-user';
 import { EditUserComponent } from './component/edit-user';
 import { ListUserComponent } from './component/list-user';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 @NgModule({
     imports: [
@@ -17,6 +18,7 @@ import { ListUserComponent } from './component/list-user';
         FormsModule,
         HttpClientModule,
         ReactiveFormsModule,
+        MDBBootstrapModule,
         NgxDatatableModule,
         NgSelectModule,
         UserAdminRoutingModule
