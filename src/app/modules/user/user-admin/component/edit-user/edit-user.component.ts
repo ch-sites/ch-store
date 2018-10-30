@@ -16,11 +16,11 @@ import { RoleService } from '@Core/services';
     styleUrls: ['./edit-user.scss']
 })
 export class EditUserComponent implements OnInit {
-    private user$: Observable<User>;
-    private editedUser: User;
-    private roles$: Observable<Role[]>;
-    private userForm: FormGroup;
-    private buttonAction = 'Create';
+    public user$: Observable<User>;
+    public editedUser: User;
+    public roles$: Observable<Role[]>;
+    public userForm: FormGroup;
+    public buttonAction = 'Create';
 
     constructor(
         private formBuilder: FormBuilder,
@@ -76,7 +76,7 @@ export class EditUserComponent implements OnInit {
         this.roles$ = this.roleService.list();
     }
 
-    private createUser(userModel: any) {
+    public createUser(userModel: any) {
         this.roleService.get(userModel.roles).subscribe((role) => {
             let user = { ...userModel, role: role };
 
@@ -84,7 +84,7 @@ export class EditUserComponent implements OnInit {
         });
     }
 
-    private updateUser(userModel: any) {
+    public updateUser(userModel: any) {
         this.roleService.get(userModel.roles).subscribe((role) => {
             let user = { uid: userModel.uid, ...userModel, roles: [role] };
 
@@ -92,7 +92,7 @@ export class EditUserComponent implements OnInit {
         });
     }
 
-    private onSubmit() {
+    public onSubmit() {
         let userModel = this.userForm.value;
 
         if (this.editedUser) {

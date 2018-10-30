@@ -8,19 +8,19 @@ import { UserDataService } from '@Core/modules/user-core/services';
     styleUrls: ['./admin-user.scss']
 })
 export class AdminUserComponent implements OnInit {
-    private selectedUser: User = null;
+    public selectedUser: User = null;
 
     constructor(private userDataService: UserDataService) { }
 
     ngOnInit() { }
 
-    private deleteUser(): void {
+    public deleteUser(): void {
         this.userDataService.delete(this.selectedUser).subscribe(user => {
             this.selectedUser = null;
         });
     }
 
-    private onSelectUser(user: User) {
+    public onSelectUser(user: User) {
         this.selectedUser = user;
     }
 

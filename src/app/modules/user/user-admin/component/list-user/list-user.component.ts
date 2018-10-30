@@ -11,9 +11,9 @@ import { UserDataService } from '@Core/modules/user-core/services';
   styleUrls: ['./list-user.scss']
 })
 export class ListUserComponent implements OnInit {
-    private users$: Observable<User[]>;
-    private selected = [];
-    private columns = [
+    public users$: Observable<User[]>;
+    public selected = [];
+    public columns = [
         { name: 'First Name' },
         { name: 'LastName ' },
         { name: 'DisplayName' },
@@ -29,7 +29,7 @@ export class ListUserComponent implements OnInit {
     ngOnInit() {
     }
 
-    private onSelectUser({ selected }) {
+    public onSelectUser({ selected }) {
         this.onSelect.emit(selected[0]);
     }
 
