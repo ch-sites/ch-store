@@ -16,11 +16,11 @@ import { HomeComponent } from './pages/home';
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
         CoreModule,
         MDBBootstrapModule.forRoot(),
         GravatarModule,
-        LoginModule
+        LoginModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
