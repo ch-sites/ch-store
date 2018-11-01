@@ -10,11 +10,16 @@ import { User } from '@Core/models';
 import * as authenticationActions from '@Core/store/authentication/authentication.actions';
 import * as userActions from '@Core/store/user/user.actions';
 import { Action } from '@ngrx/store';
+import { AuthorizationService } from '@Core/modules/authorization/service/authorization.service';
 
 @Injectable()
 export class AuthenticationEffects {
 
-    constructor(private actions$: Actions, private afAuth: AngularFireAuth) { }
+    constructor(
+        private actions$: Actions,
+        private afAuth: AngularFireAuth,
+        private authorizationService: AuthorizationService
+    ) { }
 
     @Effect()
     getUser: Observable<Action> = this.actions$
@@ -71,6 +76,8 @@ export class AuthenticationEffects {
                 return of(this.afAuth.auth.signOut());
             }),
             map(authData => {
+                this.authorizationService.removeAll();
+
                 return new authenticationActions.NotAuthenticated();
             }),
             catchError(err => of(new authenticationActions.AuthError({ error: err.message })))

@@ -19,6 +19,8 @@ import { UserState } from './store/user/user.state';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RoleService } from './services';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthorizationModule } from './modules/authorization/authorization.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 export interface State {
     authentication: AuthenticationState;
@@ -37,6 +39,8 @@ export const reducers: ActionReducerMap<State> = {
         AngularFireModule.initializeApp(environment.firebase),
         AngularFireAuthModule,
         AngularFirestoreModule,
+        AuthorizationModule,
+        NgxPermissionsModule.forChild(),
         UserCoreModule,
         EffectsModule.forRoot([
             AuthenticationEffects,

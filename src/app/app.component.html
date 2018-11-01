@@ -9,7 +9,7 @@
                 <a class="nav-link" routerLink="/home" routerLinkActive="true">Home</a>
             </li>
 
-            <li class="nav-item active waves-light" mdbWavesEffect>
+            <li class="nav-item active waves-light" mdbWavesEffect *ngxPermissionsOnly="['ADMIN']">
                 <a class="nav-link" routerLink="/admin" routerLinkActive="true">Admin</a>
             </li>
         </ul>

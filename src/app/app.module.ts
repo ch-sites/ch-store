@@ -8,6 +8,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { GravatarModule } from 'ngx-gravatar';
 import { LoginModule } from './pages/login/login.module';
 import { HomeComponent } from './pages/home';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 @NgModule({
     declarations: [
@@ -18,6 +19,7 @@ import { HomeComponent } from './pages/home';
         BrowserModule,
         CoreModule,
         MDBBootstrapModule.forRoot(),
+        NgxPermissionsModule.forRoot(),
         GravatarModule,
         LoginModule,
         AppRoutingModule

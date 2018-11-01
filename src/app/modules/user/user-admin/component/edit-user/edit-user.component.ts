@@ -89,7 +89,7 @@ export class EditUserComponent implements OnInit {
             let user: User = { uid: userModel.uid, ...userModel };
 
             if (role) {
-                user.roles = [role.name];
+                user.roles = [role];
             }
 
             this.userDataService.update(user);
