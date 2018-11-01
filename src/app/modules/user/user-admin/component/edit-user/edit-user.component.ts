@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { switchMap } from "rxjs/operators";
+import { switchMap } from 'rxjs/operators';
 
 import { User } from '@Core/models';
 import { UserDataService } from '@Core/modules/user-core/services';
@@ -11,7 +11,7 @@ import { Role } from '@Core/models/role.model';
 import { RoleService } from '@Core/services';
 
 @Component({
-    selector: 'edit-user',
+    selector: 'app-edit-user',
     templateUrl: './edit-user.html',
     styleUrls: ['./edit-user.scss']
 })
@@ -46,9 +46,9 @@ export class EditUserComponent implements OnInit {
         this.user$ = this.activatedRoute.paramMap
             .pipe(
                 switchMap((params: ParamMap) => {
-                    let uid = params.get('uid');
+                    const uid = params.get('uid');
 
-                    if (uid != '0') {
+                    if (uid !== '0') {
                         return this.userDataService.load(uid);
                     } else {
                         return Observable.create();
@@ -78,7 +78,7 @@ export class EditUserComponent implements OnInit {
 
     public createUser(userModel: any) {
         this.roleService.get(userModel.roles).subscribe((role) => {
-            let user = { ...userModel, role: role };
+            const user = { ...userModel, role: role };
 
             this.userDataService.add(user);
         });
@@ -86,7 +86,7 @@ export class EditUserComponent implements OnInit {
 
     public updateUser(userModel: any) {
         this.roleService.get(userModel.roles).subscribe((role) => {
-            let user: User = { uid: userModel.uid, ...userModel };
+            const user: User = { uid: userModel.uid, ...userModel };
 
             if (role) {
                 user.roles = [role];
@@ -97,7 +97,7 @@ export class EditUserComponent implements OnInit {
     }
 
     public onSubmit() {
-        let userModel = this.userForm.value;
+        const userModel = this.userForm.value;
 
         if (this.editedUser) {
             this.updateUser(userModel);

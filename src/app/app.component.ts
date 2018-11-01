@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
         this.authentication$ = this.store.select('authentication');
         this.authentication$.subscribe(authentication => {
             this.currentUser = authentication.user;
-        })
+        });
 
         this.store.dispatch(new authenticationActions.GetUser());
     }

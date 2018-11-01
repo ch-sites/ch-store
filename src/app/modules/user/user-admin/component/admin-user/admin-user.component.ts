@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { User } from '@Core/models';
 import { UserDataService } from '@Core/modules/user-core/services';
 
 @Component({
-    selector: 'admin-user',
+    selector: 'app-admin-user',
     templateUrl: './admin-user.html',
     styleUrls: ['./admin-user.scss']
 })

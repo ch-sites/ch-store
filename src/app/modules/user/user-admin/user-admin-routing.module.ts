@@ -1,8 +1,8 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { AdminUserComponent } from "./component/admin-user";
-import { EditUserComponent } from "./component/edit-user";
-import { ListUserComponent } from "./component/list-user";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { AdminUserComponent } from './component/admin-user';
+import { EditUserComponent } from './component/edit-user';
+import { ListUserComponent } from './component/list-user';
 
 const userRoutes: Routes = [
     {
@@ -11,15 +11,15 @@ const userRoutes: Routes = [
         pathMatch: 'full'
     },
     {
-        path: "admin-users",
+        path: 'admin-users',
         component: AdminUserComponent
     },
     {
-        path: "edit-user/:uid",
+        path: 'edit-user/:uid',
         component: EditUserComponent
     },
     {
-        path: "list-user",
+        path: 'list-user',
         component: ListUserComponent
     }
 ];

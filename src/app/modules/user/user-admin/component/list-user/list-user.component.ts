@@ -6,7 +6,7 @@ import { User } from '@Core/models';
 import { UserDataService } from '@Core/modules/user-core/services';
 
 @Component({
-  selector: 'list-user',
+  selector: 'app-list-user',
   templateUrl: './list-user.html',
   styleUrls: ['./list-user.scss']
 })
@@ -20,7 +20,7 @@ export class ListUserComponent implements OnInit {
         { name: 'Email' }
     ];
 
-    @Output() onSelect = new EventEmitter<User>();
+    @Output() select = new EventEmitter<User>();
 
     constructor(private userDataService: UserDataService) {
         this.users$ = this.userDataService.list();
@@ -30,7 +30,7 @@ export class ListUserComponent implements OnInit {
     }
 
     public onSelectUser({ selected }) {
-        this.onSelect.emit(selected[0]);
+        this.select.emit(selected[0]);
     }
 
 }

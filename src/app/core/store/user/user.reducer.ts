@@ -5,8 +5,8 @@ import { UserState } from './user.state';
 
 export const adapter: EntityAdapter<User> = createEntityAdapter<User>(
     {
-    selectId: (model: User) => model.uid,
-}
+        selectId: (model: User) => model.uid,
+    }
 );
 
 export const initialState: UserState = adapter.getInitialState({

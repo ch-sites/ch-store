@@ -1,11 +1,10 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { User } from "@Core/models";
-import { Role } from "@Core/models/role.model";
+import { User } from '@Core/models';
 
 @Injectable()
 export class UserDataService {
@@ -29,7 +28,7 @@ export class UserDataService {
                     return {...data};
                 })
             )
-        )
+        );
     }
 
     /**
@@ -78,13 +77,12 @@ export class UserDataService {
                     const user: User = { uid: uid, ...value };
 
                     observer.next(user);
-                }
-                else {
+                } else {
                     observer.next(null);
                 }
 
             });
-        })
+        });
     }
 
     /**

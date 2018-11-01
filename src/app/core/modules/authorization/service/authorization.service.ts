@@ -1,23 +1,21 @@
 import { Injectable } from '@angular/core';
 
 import { NgxRolesService, NgxPermissionsService } from 'ngx-permissions';
-
 import { Observable } from 'rxjs';
 
 import { Role } from '@Core/models';
 
 @Injectable()
 export class AuthorizationService {
-
     constructor(
         private permissionsService: NgxPermissionsService,
         private rolesService: NgxRolesService
     ) { }
 
     public addPermissionsToRole(role: Role, permissions: string[]) {
-            this.rolesService.addRole(
-                role.name, permissions
-            );
+        this.rolesService.addRole(
+            role.name, permissions
+        );
     }
 
     public addPermissionById(action: string, resourceId: string, userId: string): void {
@@ -40,7 +38,7 @@ export class AuthorizationService {
         let permission = action + '-' + resourceId;
 
         if (userId) {
-            permission = userId + "-" + permission;
+            permission = userId + '-' + permission;
         }
 
         return permission;

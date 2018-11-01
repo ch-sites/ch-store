@@ -1,9 +1,9 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from "rxjs";
-import { map } from 'rxjs/operators'
-import { Role } from "@Core/models/role.model";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Role } from '@Core/models/role.model';
 
 @Injectable()
 export class RoleService {
@@ -22,8 +22,8 @@ export class RoleService {
     }
 
     delete(role: Role): Observable<Role> {
-        this.get(role.uid).subscribe(role => {
-            let index = this.roles.indexOf(role);
+        this.get(role.uid).subscribe(item => {
+            const index = this.roles.indexOf(item);
 
             this.roles.splice(index, 1);
         });
@@ -44,7 +44,7 @@ export class RoleService {
             });
 
             observer.next(role);
-        })
+        });
     }
 
     list(): Observable<Role[]> {

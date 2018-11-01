@@ -1,6 +1,6 @@
-import { User } from "@Core/models";
+import { User } from '@Core/models';
 
 export interface AuthenticationState {
     user: User;
-    loading: boolean
+    loading: boolean;
 }

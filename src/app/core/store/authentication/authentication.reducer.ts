@@ -7,7 +7,9 @@ export type Action = authenticationActions.AuthenticationActions;
 const defaultUser: User = { uid: null, displayName: 'GUEST', email: null };
 
 /// Reducer function
-export function authenticationReducer(state: AuthenticationState = { user: defaultUser, loading: false }, action: Action) {
+export function authenticationReducer(
+    state: AuthenticationState = { user: defaultUser, loading: false }, action: Action) {
+
     switch (action.type) {
         case authenticationActions.GET_USER:
             return { ...state, loading: true };

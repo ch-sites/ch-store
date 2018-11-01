@@ -6,7 +6,6 @@ import * as firebase from 'firebase';
 import { Observable, of } from 'rxjs';
 import { map, switchMap, delay, catchError, mergeMap } from 'rxjs/operators';
 
-import { User } from '@Core/models';
 import * as authenticationActions from '@Core/store/authentication/authentication.actions';
 import * as userActions from '@Core/store/user/user.actions';
 import { Action } from '@ngrx/store';
