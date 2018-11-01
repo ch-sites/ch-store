@@ -14,7 +14,7 @@ export class ListUserComponent implements OnInit {
     public users$: Observable<User[]>;
     public selected = [];
     public columns = [
-        { name: 'First Name' },
+        { name: 'FirstName' },
         { name: 'LastName ' },
         { name: 'DisplayName' },
         { name: 'Email' }

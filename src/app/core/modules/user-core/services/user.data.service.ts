@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { map } from 'rxjs/operators';
 
 import { User } from "@Core/models";
+import { Role } from "@Core/models/role.model";
 
 @Injectable()
 export class UserDataService {
@@ -25,19 +26,7 @@ export class UserDataService {
                 action => {
                     const data = action.payload.doc.data() as User;
 
-                    let roles = [];
-
-                    try {
-                        if (data.roles) {
-                            data.roles.forEach(item => {
-                            roles.push(item);
-                        });
-                        }
-                    } catch(error) {
-                        console.log(error);
-                    }
-
-                    return {...data, roles: roles};
+                    return {...data};
                 })
             )
         )

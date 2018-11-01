@@ -22,7 +22,7 @@ export class RoleService {
     }
 
     delete(role: Role): Observable<Role> {
-        this.get(role.id).subscribe(role => {
+        this.get(role.uid).subscribe(role => {
             let index = this.roles.indexOf(role);
 
             this.roles.splice(index, 1);
@@ -33,12 +33,12 @@ export class RoleService {
         });
     }
 
-    get(id: string): Observable<Role> {
+    get(uid: string): Observable<Role> {
         return new Observable<Role>(observer => {
             let role: Role;
 
             this.roles.forEach(item => {
-                if (item.id === id) {
+                if (item.uid === uid) {
                     role = item;
                 }
             });
@@ -66,7 +66,7 @@ export class RoleService {
         let i;
 
         this.roles.forEach((item, index) => {
-            if (role.id === item.id) {
+            if (role.uid === item.uid) {
                 i = index;
             }
         });

@@ -86,7 +86,11 @@ export class EditUserComponent implements OnInit {
 
     public updateUser(userModel: any) {
         this.roleService.get(userModel.roles).subscribe((role) => {
-            let user = { uid: userModel.uid, ...userModel, roles: [role] };
+            let user: User = { uid: userModel.uid, ...userModel };
+
+            if (role) {
+                user.roles = [role.name];
+            }
 
             this.userDataService.update(user);
         });
