@@ -5,6 +5,7 @@ import { Store } from '@ngrx/store';
 import * as authenticationActions from '@Core/store/authentication/authentication.actions';
 import { AuthenticationState } from '@Core/store/authentication/authentication.state';
 import { User } from '@Core/models';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -16,7 +17,9 @@ export class AppComponent implements OnInit {
     authentication$: Observable<AuthenticationState>;
     currentUser: User = null;
 
-    constructor(private store: Store<AuthenticationState>) { }
+    constructor(
+        private router: Router,
+        private store: Store<AuthenticationState>) { }
 
     ngOnInit() {
         this.authentication$ = this.store.select('authentication');
@@ -29,6 +32,8 @@ export class AppComponent implements OnInit {
 
     logout() {
         this.store.dispatch(new authenticationActions.Logout());
+
+        this.router.navigate(['/']);
     }
 
 }
