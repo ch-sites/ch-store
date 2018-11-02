@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
-import * as authenticationActions from '@Core/store/authentication/authentication.actions';
-import { AuthenticationState } from '@Core/store/authentication/authentication.state';
+import * as authenticationActions from '@Core/modules/authentication/store';
+import { AuthenticationState } from '@Core/modules/authentication/store';
 import { User } from '@Core/models';
 import { Router } from '@angular/router';
 

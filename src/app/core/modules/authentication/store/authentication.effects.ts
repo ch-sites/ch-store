@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 
 import { Effect, Actions, ofType } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 import * as firebase from 'firebase';
 import { Observable, of } from 'rxjs';
 import { map, switchMap, delay, catchError, mergeMap } from 'rxjs/operators';
 
-import * as authenticationActions from '@Core/store/authentication/authentication.actions';
-import * as userActions from '@Core/store/user/user.actions';
-import { Action } from '@ngrx/store';
-import { AuthorizationService } from '@Core/modules/authorization/service/authorization.service';
+import * as authenticationActions from '@Core/modules/authentication/store/authentication.actions';
+import * as userActions from '@Core/modules/user-core/store';
+import { AuthorizationService } from '@Core/modules/authorization/services';
 
 @Injectable()
 export class AuthenticationEffects {

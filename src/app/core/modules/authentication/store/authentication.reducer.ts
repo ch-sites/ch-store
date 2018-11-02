@@ -1,6 +1,6 @@
-import * as authenticationActions from '@Core/store/authentication/authentication.actions';
+import * as authenticationActions from '@Core/modules/authentication/store/authentication.actions';
 import { User } from '@Core/models';
-import { AuthenticationState } from './authentication.state';
+import { AuthenticationState } from '@Core/modules/authentication/store';
 
 export type Action = authenticationActions.AuthenticationActions;
 

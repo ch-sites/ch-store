@@ -1,7 +1,8 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+
 import { User } from '@Core/models';
-import * as userActions from '@Core/store/user/user.actions';
-import { UserState } from './user.state';
+import * as userActions from '@Core/modules/user-core/store/user.actions';
+import { UserState } from '@Core/modules/user-core/store';
 
 export const adapter: EntityAdapter<User> = createEntityAdapter<User>(
     {

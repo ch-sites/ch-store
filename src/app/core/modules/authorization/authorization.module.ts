@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { NgxPermissionsService, NgxPermissionsStore} from 'ngx-permissions';
 
-import { AuthorizationService } from './service/authorization.service';
+import { AuthorizationService } from '@Core/modules/authorization/services';
 
 @NgModule({
     exports: [],

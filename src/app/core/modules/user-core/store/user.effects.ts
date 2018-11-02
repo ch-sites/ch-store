@@ -5,9 +5,9 @@ import { Action } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 
-import * as userActions from '@Core/store/user/user.actions';
+import * as userActions from '@Core/modules/user-core/store/user.actions';
 import { UserDataService } from '@Core/modules/user-core/services';
-import { AuthorizationService } from '@Core/modules/authorization/service/authorization.service';
+import { AuthorizationService } from '@Core/modules/authorization/services';
 
 @Injectable()
 export class UserEffects {

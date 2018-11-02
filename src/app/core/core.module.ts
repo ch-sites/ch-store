@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -7,20 +8,19 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
-import { AuthenticationEffects } from '@Core/store/authentication/authentication.effects';
-import { authenticationReducer } from '@Core/store/authentication/authentication.reducer';
-import { UserEffects } from '@Core/store/user/user.effects';
-import { UserReducer } from '@Core/store/user/user.reducer';
-import { UserCoreModule } from './modules/user-core/user-core.module';
-import { environment } from '../../environments/environment';
-import { AuthenticationState } from './store/authentication/authentication.state';
-import { UserState } from './store/user/user.state';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
-import { RoleService } from './services';
-import { HttpClientModule } from '@angular/common/http';
-import { AuthorizationModule } from './modules/authorization/authorization.module';
 import { NgxPermissionsModule } from 'ngx-permissions';
+
+import {
+    AuthenticationEffects,
+    authenticationReducer,
+    AuthenticationState
+} from '@Core/modules/authentication/store';
+import { UserEffects, UserReducer, UserState } from '@Core/modules/user-core/store';
+import { UserCoreModule } from './modules/user-core/user-core.module';
+import { RoleService } from './services';
+import { AuthorizationModule } from './modules/authorization/authorization.module';
+import { environment } from '../../environments/environment';
 
 export interface State {
     authentication: AuthenticationState;
