@@ -25,9 +25,19 @@ const routes: Routes = [{
         redirectTo: ''
     },
     canLoad: [NgxPermissionsGuard],
-    loadChildren: './modules/user/user-admin/user-admin.module#UserAdminModule'
-}
-];
+    loadChildren: '@Modules/user/user-admin/user-admin.module#UserAdminModule'
+}, {
+    path: 'admin-product-base',
+    data: {
+        permissions: {
+            only: ['ADMIN']
+        },
+        redirectTo: ''
+    },
+    canLoad: [NgxPermissionsGuard],
+    loadChildren:
+        '@Modules/product/product-base-admin/product-base-admin.module#ProductBaseAdminModule'
+}];
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

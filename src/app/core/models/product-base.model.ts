@@ -3,7 +3,7 @@ export interface ProductBase {
     name: string;
     description?: string;
     category: string;
-    color?: string;
+    colors?: Array<string>;
     material?: string;
     manufacturer?: string;
     width?: string;

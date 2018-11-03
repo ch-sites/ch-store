@@ -1,0 +1,19 @@
+<ngx-datatable class="material" [rows]="productBases$ | async" [columns]="columns" [columnMode]="'force'" [headerHeight]="50"
+    [footerHeight]="50" [rowHeight]="50" [selected]="selected" [selectionType]="'single'" (select)='onSelectProductBase($event)'>
+
+    <ngx-datatable-column name="Name">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span>
+                <a [routerLink]="['../edit-product-base', row.uid]">{{value}}</a>
+            </span>
+        </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Category">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span>
+                <a [routerLink]="['../edit-product-base', row.uid]">{{value}}</a>
+            </span>
+        </ng-template>
+    </ngx-datatable-column>
+</ngx-datatable>

@@ -1,0 +1,26 @@
+
+<form [formGroup]="productBaseForm" (ngSubmit)="onSubmit()" novalidate >
+    <input hidden formControlName="uid">
+
+    <p class="h5 text-center mb-4">New ProductBase</p>
+
+    <div class="md-form">
+        <input class="form-control" formControlName="name" minlength="4" maxlength="30"
+            id="name" type="text" autofocus mdbActive>
+
+            <label for="name">Name: </label>
+    </div>
+
+    <div class="md-form">
+        <input class="form-control" formControlName="category" minlength="4" maxlength="30"
+            id="category" type="text" autofocus mdbActive>
+
+        <label for="category">Category: </label>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-default waves-light" mdbRippleRadius type="submit" [disabled]="productBaseForm.pristine">
+            {{buttonAction}}
+        </button>
+    </div>
+</form>

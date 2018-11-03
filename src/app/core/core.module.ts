@@ -21,6 +21,7 @@ import { UserCoreModule } from './modules/user-core/user-core.module';
 import { RoleService } from './services';
 import { AuthorizationModule } from './modules/authorization/authorization.module';
 import { environment } from '../../environments/environment';
+import { ProductBaseCoreModule } from './modules/product-base-core/product-base-core.module';
 
 export interface State {
     authentication: AuthenticationState;
@@ -51,6 +52,7 @@ export const reducers: ActionReducerMap<State> = {
             maxAge: 25,
             logOnly: environment.production
         }),
+        ProductBaseCoreModule,
         MDBBootstrapModule
     ],
     providers: [RoleService]
