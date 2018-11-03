@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+
 import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { switchMap, map } from 'rxjs/operators';
 
 import { ProductBaseDataService } from '../services';
 import * as productBaseActions from '@Core/modules/product-base-core/store/product-base.actions';
-import { switchMap, map } from 'rxjs/operators';
-import { Action } from '@ngrx/store';
 
 
 @Injectable()
@@ -29,7 +30,7 @@ export class ProductBaseEffects {
             )
         );
 
-     @Effect()
+    @Effect()
     updateProductBase: Observable<Action> = this.actions$
         .pipe(
             ofType(productBaseActions.ProductBaseActionTypes.UPDATE_PRODUCT_BASE),
@@ -37,7 +38,7 @@ export class ProductBaseEffects {
                 this.productBaseDataService.update(state.payload.productBase).pipe(
                     map(productBase => {
                         return new productBaseActions.UpdateProductBaseSuccess(
-                            { productBase: {id: productBase.uid, changes: productBase }});
+                            { productBase: { id: productBase.uid, changes: productBase } });
                     })
                 )
             )

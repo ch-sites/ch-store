@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import { ProductBaseState } from '../store';
 import { ProductBase } from '@Core/models';
-import * as productBaseActions from '@Core/modules/product-base-core/store';
-import * as productBaseSelectors from '@Core/modules/product-base-core/store/product-base.selectors';
-import { Observable } from 'rxjs';
+import * as productBaseActions from '@Core/modules/product-base-core/store/product-base.actions';
+import
+    * as productBaseSelectors from '@Core/modules/product-base-core/store/product-base.selectors';
 
 @Injectable()
 export class ProductBaseStateService {
