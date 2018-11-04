@@ -1,12 +1,13 @@
 export interface ProductBase {
-    uid?: string;
-    name: string;
-    description?: string;
     category: string;
     colors?: Array<string>;
-    material?: string;
-    manufacturer?: string;
-    width?: string;
+    description?: string;
     height?: string;
+    mainImage?: string;
+    manufacturer?: string;
+    material?: string;
+    name: string;
+    uid?: string;
     weight?: string;
+    width?: string;
 }

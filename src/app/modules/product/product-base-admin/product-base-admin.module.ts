@@ -11,6 +11,7 @@ import { AdminProductBaseComponent } from './component/admin-product-base';
 import { EditProductBaseComponent } from './component/edit-product-base';
 import { ListProductBaseComponent } from './component/list-product-base';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FileUploadModule } from '@Core/modules/file-upload/file-upload.module';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
         MDBBootstrapModule,
         NgxDatatableModule,
         NgSelectModule,
-        ProductBaseAdminRoutingModule
+        ProductBaseAdminRoutingModule,
+        FileUploadModule
     ],
     declarations: [
         AdminProductBaseComponent,

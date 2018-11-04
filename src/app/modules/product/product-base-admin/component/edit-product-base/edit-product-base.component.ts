@@ -29,8 +29,10 @@ export class EditProductBaseComponent implements OnInit {
     ngOnInit() {
         this.productBaseForm = this.formBuilder.group(
             {
-                name: ['', Validators.required],
                 category: ['', Validators.required],
+                description: ['', Validators.required],
+                mainImage: [''],
+                name: ['', Validators.required],
                 uid: ['']
             }
         );
@@ -53,8 +55,10 @@ export class EditProductBaseComponent implements OnInit {
         this.productBase$.subscribe(productBase => {
             if (productBase) {
                 this.productBaseForm.patchValue({
-                    name: productBase.name,
                     category: productBase.category,
+                    description: productBase.description,
+                    mainImage: productBase.mainImage,
+                    name: productBase.name,
                     uid: productBase.uid
                 });
 
@@ -82,5 +86,11 @@ export class EditProductBaseComponent implements OnInit {
         }
 
         this.router.navigate(['../']);
+    }
+
+    public uploadedHandler(event: string) {
+        this.productBaseForm.patchValue({
+            mainImage: event
+        });
     }
 }
