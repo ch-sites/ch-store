@@ -1,5 +1,5 @@
-import { ProductBaseState } from "./product-base.state";
-import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { ProductBaseState } from './product-base.state';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import * as fromProductBase from '@Core/modules/product-base-core/store/product-base.reducer';
 

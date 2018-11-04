@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { tap, finalize } from 'rxjs/operators';
 
 @Component({
-    selector: 'file-upload',
+    selector: 'app-file-upload',
     templateUrl: './file-upload.component.html',
     styleUrls: ['./file-upload.component.scss']
 })
