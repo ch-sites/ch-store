@@ -16,6 +16,9 @@
             "@Modules/*": [
                 "app/modules/*"
             ],
+            "@Pages/*": [
+                "app/pages/*"
+            ],
             "@Shared/*": [
                 "app/shared/*"
             ]
