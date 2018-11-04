@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminProductBaseComponent } from './component/admin-product-base';
 import { EditProductBaseComponent } from './component/edit-product-base';
 import { ListProductBaseComponent } from './component/list-product-base';
+import { ProductBaseResolverService } from './resolvers';
 
 const routes: Routes = [
     {
@@ -12,7 +13,8 @@ const routes: Routes = [
     },
     {
         path: 'admin-product-base',
-        component: AdminProductBaseComponent
+        component: AdminProductBaseComponent,
+        resolve: {data: ProductBaseResolverService}
     },
     {
         path: 'edit-product-base/:uid',

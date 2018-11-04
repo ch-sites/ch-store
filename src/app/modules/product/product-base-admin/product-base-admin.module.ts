@@ -12,6 +12,7 @@ import { EditProductBaseComponent } from './component/edit-product-base';
 import { ListProductBaseComponent } from './component/list-product-base';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FileUploadModule } from '@Core/modules/file-upload/file-upload.module';
+import { ProductBaseResolverService } from './resolvers';
 
 @NgModule({
     imports: [
@@ -29,6 +30,9 @@ import { FileUploadModule } from '@Core/modules/file-upload/file-upload.module';
         AdminProductBaseComponent,
         EditProductBaseComponent,
         ListProductBaseComponent
+    ],
+    providers: [
+        ProductBaseResolverService
     ]
 })
 export class ProductBaseAdminModule { }

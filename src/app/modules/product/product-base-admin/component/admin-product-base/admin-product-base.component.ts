@@ -13,9 +13,7 @@ export class AdminProductBaseComponent implements OnInit {
 
     constructor(private productBaseStateService: ProductBaseStateService) { }
 
-    ngOnInit() {
-        this.productBaseStateService.dispatchLoadProductBasesAction();
-    }
+    ngOnInit() {}
 
     public deleteProductBase(): void {
         this.productBaseStateService.dispatchDeleteAction(this.selectedProductBase.uid);
