@@ -3,7 +3,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { User } from '@Core/models';
-import { UserDataService } from '@Core/modules/user-core/services';
+import { UserStateService } from '@Core/modules/user-core/services/user-state.service';
 
 @Component({
   selector: 'app-list-user',
@@ -22,8 +22,8 @@ export class ListUserComponent implements OnInit {
 
     @Output() select = new EventEmitter<User>();
 
-    constructor(private userDataService: UserDataService) {
-        this.users$ = this.userDataService.list();
+    constructor(private userStateService: UserStateService) {
+        this.users$ = this.userStateService.getUserList();
     }
 
     ngOnInit() {

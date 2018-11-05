@@ -48,4 +48,18 @@ export class UserEffects {
                 )
             )
         );
+
+    @Effect()
+    loadUsers: Observable<Action> = this.actions$
+        .pipe(
+            ofType(userActions.LOAD_USERS),
+            switchMap((state: userActions.LoadUsers) =>
+                this.userDataService.list().pipe(
+                    map(users => {
+                        return new userActions.LoadUsersSuccess(
+                            { users: users });
+                    })
+                )
+            )
+        );
 }

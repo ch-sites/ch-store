@@ -11,6 +11,7 @@ import { AdminUserComponent } from './component/admin-user';
 import { EditUserComponent } from './component/edit-user';
 import { ListUserComponent } from './component/list-user';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { UserResolverService } from './resolvers';
 
 @NgModule({
     imports: [
@@ -27,6 +28,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
         AdminUserComponent,
         EditUserComponent,
         ListUserComponent
+    ],
+    providers: [
+        UserResolverService
     ]
 })
 export class UserAdminModule { }

@@ -7,6 +7,7 @@ export const ADD_USER_SUCCESS = '[User] Add User Success';
 export const LOAD_USER = '[User] Load User';
 export const LOAD_USER_SUCCESS = '[User] Load User Success';
 export const LOAD_USERS = '[User] Load Users';
+export const LOAD_USERS_SUCCESS = '[User] Load Users Success';
 export const UPSERT_USER = '[User] Upsert User';
 export const ADD_USERS = '[User] Add Users';
 export const UPSERT_USERS = '[User] Upsert Users';
@@ -41,6 +42,12 @@ export class LoadUserSuccess implements Action {
 }
 export class LoadUsers implements Action {
     readonly type = LOAD_USERS;
+
+    constructor(public payload: { }) { }
+}
+
+export class LoadUsersSuccess implements Action {
+    readonly type = LOAD_USERS_SUCCESS;
 
     constructor(public payload: { users: User[] }) { }
 }
@@ -95,6 +102,7 @@ export type ActionTypes =
     LoadUser
     | LoadUserSuccess
     | LoadUsers
+    | LoadUsersSuccess
     | AddUser
     | AddUserSuccess
     | UpsertUser

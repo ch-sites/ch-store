@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminUserComponent } from './component/admin-user';
 import { EditUserComponent } from './component/edit-user';
 import { ListUserComponent } from './component/list-user';
+import { UserResolverService } from './resolvers';
 
 const userRoutes: Routes = [
     {
@@ -12,7 +13,8 @@ const userRoutes: Routes = [
     },
     {
         path: 'admin-users',
-        component: AdminUserComponent
+        component: AdminUserComponent,
+        resolve: {data: UserResolverService}
     },
     {
         path: 'edit-user/:uid',

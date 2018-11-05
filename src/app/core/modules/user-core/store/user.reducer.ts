@@ -11,7 +11,9 @@ export const adapter: EntityAdapter<User> = createEntityAdapter<User>(
 );
 
 export const initialState: UserState = adapter.getInitialState({
-    loading: false
+    loading: false,
+    error: null,
+    selectedUserID: null
 });
 
 export function UserReducer(
@@ -68,7 +70,7 @@ export function UserReducer(
             return adapter.removeMany(action.payload.ids, state);
         }
 
-        case userActions.LOAD_USERS: {
+        case userActions.LOAD_USERS_SUCCESS: {
             return adapter.addAll(action.payload.users, state);
         }
 
