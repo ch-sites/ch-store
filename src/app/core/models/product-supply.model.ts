@@ -8,7 +8,8 @@ export interface ProductSupply {
     orderId: string;
     estimatedDeliveryDays?: number;
     deliveryDate?: number;
-    webShop?: string;
     shippingCost: number;
-    price: number
+    price: number;
+    quantity: number;
+    webShop?: string;
 }

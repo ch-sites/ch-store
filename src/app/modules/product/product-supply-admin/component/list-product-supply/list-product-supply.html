@@ -18,6 +18,14 @@
         </ng-template>
     </ngx-datatable-column>
 
+     <ngx-datatable-column name="Quantity">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+            <span>
+                <a [routerLink]="['../edit-product-supply', row.uid]">{{value}}</a>
+            </span>
+        </ng-template>
+    </ngx-datatable-column>
+
     <ngx-datatable-column name="Price">
         <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
             <span>

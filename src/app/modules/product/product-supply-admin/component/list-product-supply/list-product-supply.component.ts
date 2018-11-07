@@ -16,6 +16,7 @@ export class ListProductSupplyComponent implements OnInit {
     public columns = [
         { name: 'Product' },
         { name: 'Supplier' },
+        { name: 'Quantity' },
         { name: 'Price ' }
     ];
 

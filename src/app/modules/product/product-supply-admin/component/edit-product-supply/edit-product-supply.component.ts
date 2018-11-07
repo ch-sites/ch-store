@@ -34,16 +34,17 @@ export class EditProductSupplyComponent implements OnInit {
 
         this.productSupplyForm = this.formBuilder.group(
             {
-                product: ['', Validators.required],
-                supplier: ['', Validators.required],
-                orderId: ['', Validators.required],
-                orderDate: ['', Validators.required],
-                price: ['', Validators.required],
-                estimatedDeliveryDays: [''],
                 deliveryDate: [''],
+                estimatedDeliveryDays: [''],
+                orderDate: ['', Validators.required],
+                orderId: ['', Validators.required],
+                price: ['', Validators.required],
+                product: ['', Validators.required],
+                quantity: ['', Validators.required],
                 shippingCost: ['', Validators.required],
-                webShop: ['', Validators.required],
-                uid: ['']
+                supplier: ['', Validators.required],
+                uid: [''],
+                webShop: ['', Validators.required]
             }
         );
 
@@ -65,16 +66,17 @@ export class EditProductSupplyComponent implements OnInit {
         this.productSupply$.subscribe(productSupply => {
             if (productSupply) {
                 this.productSupplyForm.patchValue({
-                    product: productSupply.product,
-                    supplier: productSupply.supplier,
-                    orderId: productSupply.orderId,
-                    orderDate: productSupply.orderDate,
-                    price: productSupply.price,
-                    estimatedDeliveryDays: productSupply.estimatedDeliveryDays,
                     deliveryDate: productSupply.deliveryDate,
+                    estimatedDeliveryDays: productSupply.estimatedDeliveryDays,
+                    orderDate: productSupply.orderDate,
+                    orderId: productSupply.orderId,
+                    price: productSupply.price,
+                    product: productSupply.product,
+                    quantity: productSupply.quantity,
                     shippingCost: productSupply.shippingCost,
-                    webShop: productSupply.webShop,
-                    uid: productSupply.uid
+                    supplier: productSupply.supplier,
+                    uid: productSupply.uid,
+                    webShop: productSupply.webShop
                 });
 
                 this.editedProductSupply = productSupply;
