@@ -1,0 +1,77 @@
+<form [formGroup]="productSupplyForm" (ngSubmit)="onSubmit()" novalidate>
+    <input hidden formControlName="uid">
+
+    <p class="h5 text-center mb-4">New ProductSupply</p>
+
+    <div class="md-form">
+        <ng-select [items]="productBases$ | async" formControlName="product" class="colorful-select dropdown-primary"
+            [hideSelected]="true" [multiple]="false" [closeOnSelect]="false" bindLabel="name" id="product" mdbActive>
+        </ng-select>
+
+        <label for="product">Product(Termek): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="form-control" formControlName="supplier" minlength="4" maxlength="30" id="supplier" type="text"
+            autofocus mdbActive>
+
+        <label for="supplier">Supplier(Beszallito): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="md-textarea form-control" formControlName="orderId" minlength="4" maxlength="500" id="orderId"
+            type="text" autofocus mdbActive>
+
+        <label for="orderId">Order ID(Rendeles azonosito): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="form-control" formControlName="orderDate" type="text" id="orderDate"
+            #orderdate="ngx-mydatepicker" ngx-mydatepicker autofocus mdbActive
+            (click)="orderdate.toggleCalendar()">
+
+        <label for="orderDate">Order Date(Rendeles datuma): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="md-form form-control" formControlName="price" minlength="4" maxlength="50" id="price" type="text"
+            autofocus mdbActive>
+
+        <label for="price">Price(Ar): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="md-form form-control" formControlName="estimatedDeliveryDays" minlength="4" maxlength="500" id="estimatedDeliveryDays"
+            type="text" autofocus mdbActive>
+
+        <label for="estimatedDeliveryDays">Estimated Delivery Days(Varhato szallitasi nap): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="md-textarea form-control" formControlName="deliveryDate" id="deliveryDate"
+            type="text" #deliverydate="ngx-mydatepicker" ngx-mydatepicker autofocus mdbActive
+            (click)="deliverydate.toggleCalendar()">
+
+        <label for="deliveryDate">Delivery Date(Erkezes datuma): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="md-textarea form-control" formControlName="shippingCost" minlength="4" maxlength="500" id="shippingCost"
+            type="text" autofocus mdbActive>
+
+        <label for="shippingCost">Shipping Cost(Szallitasi koltseg): </label>
+    </div>
+
+    <div class="md-form">
+        <input class="md-textarea form-control" formControlName="webShop" minlength="4" maxlength="500" id="webShop"
+            type="text" autofocus mdbActive>
+
+        <label for="delivwebShoperyDate">Web Shop: </label>
+    </div>
+
+    <div class="text-center">
+        <button class="btn btn-default waves-light" mdbRippleRadius type="submit" [disabled]="productSupplyForm.pristine">
+            {{buttonAction}}
+        </button>
+    </div>
+</form>

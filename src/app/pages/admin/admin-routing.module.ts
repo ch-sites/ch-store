@@ -33,6 +33,18 @@ const routes: Routes = [{
     canLoad: [NgxPermissionsGuard],
     loadChildren:
         '@Modules/product/product-base-admin/product-base-admin.module#ProductBaseAdminModule'
+},
+{
+    path: 'product-supply-admin',
+    data: {
+        permissions: {
+            only: ['ADMIN']
+        },
+        redirectTo: ''
+    },
+    canLoad: [NgxPermissionsGuard],
+    loadChildren:
+        '@Modules/product/product-supply-admin/product-supply-admin.module#ProductSupplyAdminModule'
 }];
 
 @NgModule({

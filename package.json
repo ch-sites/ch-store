@@ -35,6 +35,7 @@
     "font-awesome": "^4.7.0",
     "hammerjs": "^2.0.8",
     "ngx-gravatar": "^2.1.3",
+    "ngx-mydatepicker": "^2.4.9",
     "ngx-permissions": "^6.0.4",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

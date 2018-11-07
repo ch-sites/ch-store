@@ -9,6 +9,7 @@ import { GravatarModule } from 'ngx-gravatar';
 import { LoginModule } from './pages/login/login.module';
 import { HomeComponent } from './pages/home';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
         CoreModule,
         MDBBootstrapModule.forRoot(),
         NgxPermissionsModule.forRoot(),
+        NgxMyDatePickerModule.forRoot(),
         GravatarModule,
         LoginModule,
         AppRoutingModule

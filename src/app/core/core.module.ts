@@ -22,6 +22,8 @@ import { RoleService } from './services';
 import { AuthorizationModule } from './modules/authorization/authorization.module';
 import { environment } from '../../environments/environment';
 import { ProductBaseCoreModule } from './modules/product-base-core/product-base-core.module';
+import { ProductSupplyCoreModule } from './modules/product-supply-core/product-supply-core.module';
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 
 export interface State {
     authentication: AuthenticationState;
@@ -42,6 +44,7 @@ export const reducers: ActionReducerMap<State> = {
         AngularFirestoreModule,
         AuthorizationModule,
         NgxPermissionsModule.forChild(),
+        NgxMyDatePickerModule,
         UserCoreModule,
         EffectsModule.forRoot([
             AuthenticationEffects,
@@ -53,6 +56,7 @@ export const reducers: ActionReducerMap<State> = {
             logOnly: environment.production
         }),
         ProductBaseCoreModule,
+        ProductSupplyCoreModule,
         MDBBootstrapModule
     ],
     providers: [RoleService]
